@@ -24,6 +24,11 @@ function checkAnswer(currentLevel) {
     }
 }
 
+function unlockAudioPlayback() {
+    var unlockAudio = new Audio();
+    unlockAudio.play();
+}
+
 function startGame() {
     if (!started) {
         $("#level-title").text("Level " + level);
@@ -34,6 +39,7 @@ function startGame() {
 
 $(document).on("keypress touchstart", function (e) {
     if (e.type === "touchstart" && e.target !== document.body) {
+        unlockAudioPlayback();
         return;
     }
     startGame();

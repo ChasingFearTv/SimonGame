@@ -51,11 +51,10 @@ function startOver() {
         $("#highscore").text("Highscore: " + highscore);
     }
     gamePattern = [];
+    userClickedPattern = [];
     started = false;
     level = 0;
 }
-
-
 
 
 function handleButtonClick(userChosenColor) {

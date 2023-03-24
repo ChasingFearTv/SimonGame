@@ -24,11 +24,6 @@ function checkAnswer(currentLevel) {
     }
 }
 
-function unlockAudioPlayback() {
-    var unlockAudio = new Audio();
-    unlockAudio.play();
-}
-
 function startGame() {
     if (!started) {
         $("#level-title").text("Level " + level);
@@ -38,11 +33,10 @@ function startGame() {
 }
 
 $(document).on("keypress touchstart", function (e) {
-    if (e.type === "touchstart" && e.target !== document.body) {
-        unlockAudioPlayback();
-        return;
+    if (!started) {
+        e.preventDefault();
+        startGame();
     }
-    startGame();
 });
 
 function startOver() {
@@ -56,32 +50,18 @@ function startOver() {
     level = 0;
 }
 
-
-function handleButtonClick(userChosenColor) {
+$(".btn").on("click touchstart", function (e) {
+    e.preventDefault();
+    if (!started) {
+        return;
+    }
+    var userChosenColor = $(this).attr("id");
     userClickedPattern.push(userChosenColor);
 
     playSound(userChosenColor);
     animatePress(userChosenColor);
     checkAnswer(userClickedPattern.length - 1);
-}
-
-function buttonClickHandler(e) {
-    e.preventDefault();
-    if (e.type === "touchstart" && !started) {
-        return;
-    }
-    var userChosenColor = $(this).attr("id");
-    handleButtonClick(userChosenColor);
-}
-
-bindButtonClickHandler();
-
-
-function bindButtonClickHandler() {
-    $(".btn").off("click touchstart");
-    $(".btn").on("click touchstart", buttonClickHandler);
-}
-
+});
 
 const nextSequence = function () {
     level++;

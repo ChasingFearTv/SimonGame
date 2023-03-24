@@ -32,13 +32,6 @@ function startGame() {
     }
 }
 
-$(document).on("keypress touchstart", function (e) {
-    if (!started) {
-        e.preventDefault();
-        startGame();
-    }
-});
-
 function startOver() {
     if (level > highscore) {
         highscore = level;
@@ -54,14 +47,13 @@ function startOver() {
 
 $(document).on("keypress touchstart", function (e) {
     if (!started) {
-        if (e.type === "touchstart" && e.target !== document.body) {
-            unlockAudioPlayback();
-            return;
-        }
+        e.preventDefault();
+        startGame();
+    } else if (e.type === "touchstart" && $("#level-title").text() === "Game Over, Touch the Screen or Press Any Key to Restart") {
+        e.preventDefault();
         startGame();
     }
 });
-
 
 $(".btn").on("click touchstart", function (e) {
     e.preventDefault();

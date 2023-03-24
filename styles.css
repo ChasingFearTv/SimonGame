@@ -66,12 +66,12 @@ footer {
 
   #level-title,
   #highscore {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .btn {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
   }
 }
 
@@ -81,15 +81,15 @@ footer {
 
   #level-title,
   #highscore {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .btn {
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
   }
 
   .container {
-    width: 90%;
+    width: 80%;
   }
 }

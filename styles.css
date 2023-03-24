@@ -7,7 +7,7 @@ footer {
   color: #ffffff;
   margin: 20px;
 }
-#level-title {
+#level-title, #highscore {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;

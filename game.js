@@ -65,14 +65,23 @@ function handleButtonClick(userChosenColor) {
     checkAnswer(userClickedPattern.length - 1);
 }
 
-$(".btn").on("click touchstart", function (e) {
+function buttonClickHandler(e) {
     e.preventDefault();
     if (e.type === "touchstart" && !started) {
         return;
     }
     var userChosenColor = $(this).attr("id");
     handleButtonClick(userChosenColor);
-});
+}
+
+bindButtonClickHandler();
+
+
+function bindButtonClickHandler() {
+    $(".btn").off("click touchstart");
+    $(".btn").on("click touchstart", buttonClickHandler);
+}
+
 
 const nextSequence = function () {
     level++;

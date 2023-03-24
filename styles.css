@@ -2,15 +2,18 @@ body {
   text-align: center;
   background-color: #011F3F;
 }
+
 footer {
   font-size: medium;
   color: #ffffff;
   margin: 20px;
 }
-#level-title, #highscore {
+
+#level-title,
+#highscore {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin: 5%;
   color: #FEF2BF;
 }
 
@@ -54,4 +57,39 @@ footer {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+
+/* Media query for small devices (width up to 768px) */
+
+@media (max-width: 768px) {
+
+  #level-title,
+  #highscore {
+    font-size: 2rem;
+  }
+
+  .btn {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+/* Media query for extra small devices (width up to 480px) */
+
+@media (max-width: 480px) {
+
+  #level-title,
+  #highscore {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    height: 100px;
+    width: 100px;
+  }
+
+  .container {
+    width: 90%;
+  }
 }

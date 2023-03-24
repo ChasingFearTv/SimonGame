@@ -48,7 +48,12 @@ function startOver() {
     userClickedPattern = [];
     started = false;
     level = 0;
+
+    setTimeout(function() {
+        startGame();
+    }, 1000);
 }
+
 
 $(".btn").on("click touchstart", function (e) {
     e.preventDefault();

@@ -51,8 +51,10 @@ $(document).on("keypress touchstart", function (e) {
         startGame();
     } else if (e.type === "touchstart" && $("#level-title").text() === "Game Over, Touch the Screen or Press Any Key to Restart") {
         e.preventDefault();
-        startGame();
-    }
+        setTimeout(function () {
+            startGame();
+        }, 3000);
+}
 });
 
 $(".btn").on("click touchstart", function (e) {

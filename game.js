@@ -16,7 +16,7 @@ function checkAnswer(currentLevel) {
     } else {
         playSound("wrong");
         $("body").addClass("game-over");
-        $("h1").text("Game Over, Press Any Key to Restart");
+        $("h1").text("Game Over, Restart in 3 seconds");
         setTimeout(function () {
             $("body").removeClass("game-over");
         }, 200);
@@ -49,10 +49,18 @@ function startOver() {
     started = false;
     level = 0;
 
-    setTimeout(function() {
-        startGame();
-    }, 1000);
+    $("#level-title").text("Game Over, Touch the Screen or Press Any Key to Restart");
 }
+
+$(document).on("keypress touchstart", function (e) {
+    if (!started) {
+        if (e.type === "touchstart" && e.target !== document.body) {
+            unlockAudioPlayback();
+            return;
+        }
+        startGame();
+    }
+});
 
 
 $(".btn").on("click touchstart", function (e) {

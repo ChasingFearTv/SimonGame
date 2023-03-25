@@ -21,7 +21,7 @@ function checkAnswer(currentLevel) {
             $("body").removeClass("game-over");
             $("h1").text("Level " + level);
             startOver();
-        }, 1000);
+        }, 2000);
     }
 }
 
@@ -55,7 +55,7 @@ $(document).on("keypress touchstart", function (e) {
         e.preventDefault();
         setTimeout(function () {
             startGame();
-        }, 2000);
+        }, 1000);
 }
 });
 

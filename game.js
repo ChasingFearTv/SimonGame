@@ -11,7 +11,7 @@ function checkAnswer(currentLevel) {
             userClickedPattern = [];
             setTimeout(function () {
                 nextSequence();
-            }, 2000);
+            }, 1000);
         }
     } else {
         playSound("wrong");
@@ -21,7 +21,7 @@ function checkAnswer(currentLevel) {
             $("body").removeClass("game-over");
             $("h1").text("Level " + level);
             startOver();
-        }, 500);
+        }, 1000);
     }
 }
 
@@ -55,7 +55,7 @@ $(document).on("keypress touchstart", function (e) {
         e.preventDefault();
         setTimeout(function () {
             startGame();
-        }, 2000);
+        }, 1000);
 }
 });
 

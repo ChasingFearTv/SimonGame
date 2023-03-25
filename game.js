@@ -55,7 +55,7 @@ $(document).on("keypress touchstart", function (e) {
         e.preventDefault();
         setTimeout(function () {
             startGame();
-        }, 1000);
+        }, 2000);
 }
 });
 

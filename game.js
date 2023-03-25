@@ -11,7 +11,7 @@ function checkAnswer(currentLevel) {
             userClickedPattern = [];
             setTimeout(function () {
                 nextSequence();
-            }, 1000);
+            }, 2000);
         }
     } else {
         playSound("wrong");
@@ -19,10 +19,12 @@ function checkAnswer(currentLevel) {
         $("h1").text("Game Over, Restart in 3 seconds");
         setTimeout(function () {
             $("body").removeClass("game-over");
-        }, 200);
-        startOver();
+            $("h1").text("Level " + level);
+            startOver();
+        }, 500);
     }
 }
+
 
 function startGame() {
     if (!started) {
